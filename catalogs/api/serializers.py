@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from catalogs.models import Course, Category
+from catalogs.models import Course, Catalog
 
 
 class CourseSerializer(serializers.ModelSerializer):
@@ -15,11 +15,11 @@ class CourseSerializer(serializers.ModelSerializer):
         )
 
 
-class CategorySerializer(serializers.ModelSerializer):
+class CatalogSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Category
+        model = Catalog
         fields = (
-            'id'
+            'id',
             'title_category',
         )

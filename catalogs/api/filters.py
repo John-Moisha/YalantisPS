@@ -1,6 +1,6 @@
 from django_filters import rest_framework as filters
 
-from catalogs.models import Course, Category
+from catalogs.models import Course, Catalog
 
 
 class CourseFilter(filters.FilterSet):
@@ -13,9 +13,10 @@ class CourseFilter(filters.FilterSet):
             'quantity'
         }
 
-class CategoryFilter(filters.FilterSet):
+
+class CatalogFilter(filters.FilterSet):
     class Meta:
-        model = Category
+        model = Catalog
         fields = {
             'title_category'
         }

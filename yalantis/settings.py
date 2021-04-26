@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'catalogs',
     'rest_framework_swagger',
     'rest_framework',
+    'drf_yasg',
     'django_filters',
 ]
 
