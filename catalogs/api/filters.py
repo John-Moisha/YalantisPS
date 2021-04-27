@@ -1,22 +1,12 @@
 from django_filters import rest_framework as filters
 
-from catalogs.models import Course, Catalog
+from catalogs.models import Course
 
 
 class CourseFilter(filters.FilterSet):
     class Meta:
         model = Course
         fields = {
-            'title_course',
-            'date_start',
-            'date_end',
-            'quantity'
-        }
-
-
-class CatalogFilter(filters.FilterSet):
-    class Meta:
-        model = Catalog
-        fields = {
-            'title_category'
+            'date_start': ['gte'],
+            'date_end': ['lte'],
         }

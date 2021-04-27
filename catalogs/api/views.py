@@ -1,16 +1,8 @@
 from rest_framework import viewsets, filters
 from django_filters.rest_framework import DjangoFilterBackend
-from catalogs.api.filters import CatalogFilter, CourseFilter
-from catalogs.api.serializers import CatalogSerializer, CourseSerializer
-from catalogs.models import Catalog, Course
-
-
-class CatalogModelViewSet(viewsets.ModelViewSet):
-    queryset = Catalog.objects.all()
-    serializer_class = CatalogSerializer
-    filter_backends = [DjangoFilterBackend, filters.OrderingFilter]
-    ordering_fields = ['title_category']
-    filterset_class = CatalogFilter
+from catalogs.api.filters import CourseFilter
+from catalogs.api.serializers import CourseSerializer
+from catalogs.models import Course
 
 
 class CourseModelViewSet(viewsets.ModelViewSet):
@@ -19,3 +11,4 @@ class CourseModelViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter]
     ordering_fields = ['title_course', 'date_start', 'date_end', 'quantity']
     filterset_class = CourseFilter
+    search_fields = ['title_course']

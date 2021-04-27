@@ -6,6 +6,6 @@ app_name = 'catalogs-api'
 
 router = DefaultRouter()
 
-router.register('catalogs', views.CatalogModelViewSet, basename='catalog')
+router.register('courses', views.CourseModelViewSet, basename='course')
 
 urlpatterns = router.urls
