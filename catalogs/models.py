@@ -18,3 +18,7 @@ class Course(models.Model):
     def save(self, **kwargs):
         self.clean()
         return super().save(**kwargs)
+
+class Catalog(models.Model):
+    title_category = models.CharField(max_length=128)
+    course = models.ManyToManyField(Course)

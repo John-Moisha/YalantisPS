@@ -19,16 +19,15 @@ from rest_framework import routers
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
-
+from catalogs import views
 
 router = routers.DefaultRouter()
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-
-    # API
-    path('api/v1/', include('catalogs.api.urls')),
-
+   path('admin/', admin.site.urls),
+   path('', views.Index.as_view(), name='index'),
+   # API
+   path('api/v1/', include('catalogs.api.urls')),
 
 ]
 
