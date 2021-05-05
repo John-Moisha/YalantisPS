@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  web:
+    build: .
+    container_name: web
+    volumes:
+      - .:/app
+    command: python manage.py runserver 127.0.0.0:8000
+
+
+
+#  db:
+#    image: postgres:12.3-alpine
+#    restart: always
+#    container_name: db
+#    ports:
+#      - "5432:5432"
+#    environment:
+#      NAME=yalantisdbname
+#      USER=yalantisusername
+#      PASSWORD=f%FU&pZ^ePd4BMvC7d_xkMgN=7Av#Xbkvc
+#    volumes:
+#      - db_data:/var/lib/postressql/data
+#volumes:
+#  db_data: {}

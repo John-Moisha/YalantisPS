@@ -9,3 +9,15 @@ flake8:
 
 migrate:
 	$(manage_py) migrate
+
+runtest:
+	pytest
+
+build:
+	docker-compose up -d
+
+show_project:
+	python -m webbrowser http://127.0.0.1:8000
+
+
+run_project: build migrate runserver

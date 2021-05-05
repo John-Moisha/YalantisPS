@@ -19,5 +19,3 @@ class CatalogModelViewSet(viewsets.ModelViewSet):
     serializer_class = CatalogSerializer
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter]
     ordering_fields = ['title_catalog']
-
-
